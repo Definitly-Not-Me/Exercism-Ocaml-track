@@ -55,6 +55,9 @@ let modded_rle list =
   in
   List.rev (aux list [] 0)
 
+let duplicate list =
+  List.rev (List.fold_left (fun acc x -> x :: x :: acc) [] list)
+
 let () =
   print_endline
     (match last [ "a"; "b"; "c"; "d"; "e" ] with
